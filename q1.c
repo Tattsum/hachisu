@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define NUM 4
+#define NUM 5
 
 struct st
 {
@@ -12,7 +12,7 @@ struct st
 
 void score_add(struct st a[]){
   int i;
-  for(i=0;i<=NUM;i++){
+  for(i=0;i<NUM;i++){
     a[i].sum=a[i].jpn+a[i].eng+a[i].math;
   }
 }
@@ -21,7 +21,7 @@ int max_score_jpn(struct st a[])
 {
   int i;
   int max=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[max].jpn<a[i].jpn){
       max=i;
     }
@@ -33,7 +33,7 @@ int max_score_eng(struct st a[])
 {
   int i;
   int max=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[max].eng<a[i].eng){
       max=i;
     }
@@ -45,7 +45,7 @@ int max_score_math(struct st a[])
 {
   int i;
   int max=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[max].math<a[i].math){
       max=i;
     }
@@ -57,7 +57,7 @@ int min_score_jpn(struct st a[])
 {
   int i;
   int min=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[min].jpn>a[i].jpn){
       min=i;
     }
@@ -69,7 +69,7 @@ int min_score_eng(struct st a[])
 {
   int i;
   int min=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[min].eng>a[i].eng){
       min=i;
     }
@@ -81,7 +81,7 @@ int min_score_math(struct st a[])
 {
   int i;
   int min=0;
-  for (i=1;i<=NUM;i++){
+  for (i=1;i<NUM;i++){
     if (a[min].math>a[i].math){
       min=i;
     }
@@ -93,7 +93,7 @@ int main(void){
   struct st x [NUM];
   int i;
 
-  for(i=0;i<=NUM;i++){
+  for(i=0;i<NUM;i++){
     printf("student No. %d \n",i);
 
     printf("Name?");
@@ -113,7 +113,7 @@ int main(void){
   score_add(x);
   printf(" 名前　国語　英語　数学　合計\n");
   printf("-----------------------------\n");
-  for(i=0;i<=NUM;i++){
+  for(i=0;i<NUM;i++){
     printf("%8s %3d %3d %3d %3d\n",x[i].name,x[i].jpn,x[i].eng,x[i].math,x[i].sum);
   }
   printf("-----------------------------\n");
@@ -126,7 +126,7 @@ int main(void){
     ave_sum += x[i].sum;
   }
 
-  printf("平均点 %.1f %.1f %.1f %.1f\n",ave_jpn/5,ave_eng/5,ave_math/5,ave_sum/5);
+  printf("平均点 %.1f %.1f %.1f %.1f\n",ave_jpn/NUM,ave_eng/NUM,ave_math/NUM,ave_sum/NUM);
 
   int max_jpn=max_score_jpn(x), max_eng=max_score_eng(x),max_math = max_score_math(x),min_jpn=min_score_jpn(x),min_eng=min_score_eng(x),min_math=min_score_math(x);
 
