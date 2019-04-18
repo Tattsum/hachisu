@@ -119,7 +119,7 @@ int main(void){
   printf("-----------------------------\n");
 
   double ave_jpn=0,ave_eng=0,ave_math=0,ave_sum=0;
-  for(i=0;i<=NUM;i++){
+  for(i=0;i<NUM;i++){
     ave_jpn += x[i].jpn;
     ave_eng += x[i].eng;
     ave_math += x[i].math;
