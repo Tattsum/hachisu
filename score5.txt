@@ -1,0 +1,6 @@
+Oda       98  67  85
+Toyotomi  88  59  78
+Tokugawa  34   8  53
+Date     100  88  45
+Yagyu     59  82  73
+
